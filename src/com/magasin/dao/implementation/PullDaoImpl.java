@@ -12,7 +12,6 @@ import com.magasin.entities.Pull;
 public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
 
 	public PullDaoImpl() {
-	
 	}
 
 	@Override
@@ -93,7 +92,7 @@ public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
 	@Override
 	public int delete(Pull entite) {
 		// TODO Auto-generated method stub
-		return 0;
+		return 00;
 	}
 
 	@Override
