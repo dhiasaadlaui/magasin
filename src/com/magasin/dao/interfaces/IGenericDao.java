@@ -11,3 +11,5 @@ public interface IGenericDao<T> {
 	int delete(T entite);
 
 }
+
+//MedMehdiSarray
