@@ -1,6 +1,6 @@
 package com.magasin.entities;
 
-public class Pull extends Vetement {
+public final class Pull extends Vetement {
 
 	protected String taille;
 	protected String type;
@@ -20,7 +20,7 @@ public class Pull extends Vetement {
 			
 			) {
 		this(libelle, prixUnitaire, quantite, fournisseur, couleur, marque, genre,taille,type);
-	
+	this.id=id;
 	}
 
 
