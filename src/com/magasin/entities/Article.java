@@ -92,7 +92,7 @@ public class Article {
 		if (getClass() != obj.getClass())
 			return false;
 		Article other = (Article) obj;
-		if (id != other.id)
+		if ((id != other.id)||(!this.getClass().getSimpleName().equals(other.getClass().getSimpleName())))
 			return false;
 		return true;
 	}

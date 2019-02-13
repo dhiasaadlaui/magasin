@@ -10,7 +10,6 @@ import com.magasin.dao.interfaces.IPullDao;
 import com.magasin.entities.Pull;
 
 public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
-
 	public PullDaoImpl() {
 	}
 
