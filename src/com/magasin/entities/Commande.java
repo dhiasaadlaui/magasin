@@ -49,6 +49,11 @@ public class Commande {
 	public void setStatutCmd(String statutCmd) {
 		this.statutCmd = statutCmd;
 	}
+
+	@Override
+	public String toString() {
+		return "Commande [id=" + id + ", dateCmd=" + dateCmd + ", statutCmd=" + statutCmd + "]";
+	}
 	
 	
 

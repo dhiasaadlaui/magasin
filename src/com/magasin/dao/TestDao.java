@@ -1,23 +1,55 @@
 package com.magasin.dao;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
+import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
+import com.magasin.dao.interfaces.ICommandeDao;
 import com.magasin.dao.interfaces.IPullDao;
+import com.magasin.entities.Commande;
 import com.magasin.entities.Pull;
 
 public class TestDao {
 
-
-
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
 
-
-		IPullDao dao = new PullDaoImpl();
-
-		System.out.println(dao.findById(2));
+		IPullDao daopull = new PullDaoImpl();
+		ICommandeDao daocmd = new CommandeDaoImpl();
 		
+// ----------------- Commande dao TEST --------------------
+	
+		
+		
+		
+		
+		
+		
+		//List<Commande> cds = daocmd.findByStatut("confirmed");
+//		
+//		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
+//		
+//		try {
+//			Date datetest = sdf.parse("2019-02-14");
+//		
+//		
+//		for(Commande cmd : daocmd.findByDate(datetest))
+//		{
+//	System.out.println(cmd);
+//		}
+//		
+//		} catch (ParseException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
+//		
+//		
+		
+		// System.out.println(dao.findById(2));
+//--------------------- pull dao test --------------------------
 //		List<Pull> allPull = dao.findAll();
 //		
 //		for(Pull pull : allPull) {
@@ -31,7 +63,7 @@ public class TestDao {
 //		for(Pull pull : allPull) {
 //			System.out.println(pull);
 //		}
-		
+
 	}
 
 }
