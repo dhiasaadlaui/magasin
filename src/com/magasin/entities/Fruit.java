@@ -32,6 +32,14 @@ public final class Fruit extends Aliment {
 	public void setSaison(String saison) {
 		this.saison = saison;
 	}
+
+
+
+	@Override
+	public String toString() {
+		return "Fruit [saison=" + saison + ", id=" + id + ", libelle=" + libelle + ", prixUnitaire=" + prixUnitaire
+				+ ", quantite=" + quantite + ", fournisseur=" + fournisseur + "]";
+	}
 	
 	
 

@@ -8,14 +8,17 @@ import java.util.List;
 import com.magasin.dao.implementation.ChaussureDaoImpl;
 import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.implementation.FrigoDaoImpl;
+import com.magasin.dao.implementation.FruitDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
 import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;
 import com.magasin.dao.interfaces.IFrigoDao;
+import com.magasin.dao.interfaces.IFruitDao;
 import com.magasin.dao.interfaces.IPullDao;
 import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
 import com.magasin.entities.Frigo;
+import com.magasin.entities.Fruit;
 import com.magasin.entities.Pull;
 
 public class TestDao {
@@ -27,6 +30,15 @@ public class TestDao {
 		ICommandeDao daocmd = new CommandeDaoImpl();
 		IChaussureDao daochaussure = new ChaussureDaoImpl();
 		IFrigoDao daofrigo = new FrigoDaoImpl();
+		IFruitDao daofruit = new FruitDaoImpl();
+// ----------------- Fruit dao TEST --------------------
+
+//		System.out.println(daofruit.rechercherParSaision("été"));
+//		
+		//		Fruit fruit = daofruit.findById(2);
+//		fruit.setPrixUnitaire(2100);	
+//		System.out.println(daofruit.edit(fruit));
+//		
 		
 		
 // ----------------- Frigo dao TEST --------------------
