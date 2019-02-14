@@ -5,6 +5,9 @@ public class LigneCommande {
 	private int quantite;
 	private double prixTotalArticle;
 	private Commande commande;
+	
+	
+	
 	public LigneCommande(Article article,Commande commande, int quantite) {
 		super();
 		this.article = article;

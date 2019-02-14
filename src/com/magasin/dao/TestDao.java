@@ -15,16 +15,18 @@ public class TestDao {
 
 
 		IPullDao dao = new PullDaoImpl();
+
+		System.out.println(dao.findById(2));
 		
 //		List<Pull> allPull = dao.findAll();
 //		
 //		for(Pull pull : allPull) {
 //			System.out.println(pull);
 //		}
-		
-		Pull pl = new Pull("test", 0.0d, 55, "salah fripe", "dark", "lenovo", "doublepus", "M", "typetest");
-		System.out.println(dao.create(pl));
-				
+//		
+//		Pull pl = new Pull("test", 0.0d, 55, "salah fripe", "dark", "lenovo", "doublepus", "M", "typetest");
+//		System.out.println(dao.create(pl));
+//				
 //		allPull = dao.findAll();
 //		for(Pull pull : allPull) {
 //			System.out.println(pull);
