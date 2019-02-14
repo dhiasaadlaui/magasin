@@ -15,8 +15,34 @@ public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
 
 	@Override
 	public Pull findById(int id) {
+		
+		Pull pull=null;
+		query="SELECT * FROM pull where id="+id;
+	try {
+		smt = cnx.connect().createStatement();
+		rs = smt.executeQuery(query);
+		while(rs.next()) {
+			pull = new Pull();
+			pull.setId(rs.getInt("id"));
+			pull.setLibelle(rs.getString("libelle"));
+			pull.setFournisseur(rs.getString("fournisseur"));
+			pull.setPrixUnitaire(rs.getDouble("prixunitaire"));
+			pull.setTaille(rs.getString("taille"));
+			pull.setType(rs.getString("type"));
+			pull.setMarque(rs.getString("marque"));
+			pull.setGenre(rs.getString("genre"));
+			pull.setQuantite(rs.getInt("quantite"));	
+			pull.setCouleur(rs.getString("couleur"));
+		}
+	} catch (SQLException e) {
+		// TODO Auto-generated catch block
+		e.printStackTrace();
+	}
+		
+		
 		// TODO Auto-generated method stub
-		return null;
+		return pull;
+
 	}
 
 	@Override
