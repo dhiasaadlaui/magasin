@@ -32,6 +32,14 @@ public final class Frigo extends Electronique {
 	public void setCapacite(int capacite) {
 		this.capacite = capacite;
 	}
+
+
+	@Override
+	public String toString() {
+		return "Frigo [capacite=" + capacite + ", ratingConsommation=" + ratingConsommation + ", id=" + id
+				+ ", libelle=" + libelle + ", prixUnitaire=" + prixUnitaire + ", quantite=" + quantite
+				+ ", fournisseur=" + fournisseur + "]";
+	}
 	
 	
 	

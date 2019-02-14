@@ -7,12 +7,15 @@ import java.util.List;
 
 import com.magasin.dao.implementation.ChaussureDaoImpl;
 import com.magasin.dao.implementation.CommandeDaoImpl;
+import com.magasin.dao.implementation.FrigoDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
 import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;
+import com.magasin.dao.interfaces.IFrigoDao;
 import com.magasin.dao.interfaces.IPullDao;
 import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
+import com.magasin.entities.Frigo;
 import com.magasin.entities.Pull;
 
 public class TestDao {
@@ -23,14 +26,41 @@ public class TestDao {
 		IPullDao daopull = new PullDaoImpl();
 		ICommandeDao daocmd = new CommandeDaoImpl();
 		IChaussureDao daochaussure = new ChaussureDaoImpl();
+		IFrigoDao daofrigo = new FrigoDaoImpl();
+		
+		
+// ----------------- Frigo dao TEST --------------------
 
 		
 		
+		
+//		System.out.println(daofrigo.findById(2));
+//
+//Frigo fr = daofrigo.findById(2);
+//fr.setQuantite(20000);
+//fr.setFournisseur("Alger");
+//fr.setLibelle("Testedit");		
+//System.out.println(daofrigo.edit(fr));
+//System.out.println(daofrigo.findById(2));
+//		
+//		
+		
+		
+//		for(Frigo fr : daofrigo.findAll()) {
+//			System.out.println(fr);
+//		}
+
+//		
+//Frigo fr = new Frigo("Airwell",1300.5, 50, "Carrefour", 1, 11);
+//System.out.println(fr);
+//System.out.println(daofrigo.create(fr));
 		
 		
 		
 		
 // ----------------- Chaussure dao TEST --------------------
+		
+		
 	//Chaussure ch = new Chaussure("Adidas 3 bondes", 90d, 120, "Mehrez fripe", "rose", "Adidas", "Femme", 38);
 		
 //	System.out.println(daochaussure.rechercherParPointure(38));	
