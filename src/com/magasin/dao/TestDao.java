@@ -5,10 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.magasin.dao.implementation.ChaussureDaoImpl;
 import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
+import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;
 import com.magasin.dao.interfaces.IPullDao;
+import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
 import com.magasin.entities.Pull;
 
@@ -19,16 +22,24 @@ public class TestDao {
 
 		IPullDao daopull = new PullDaoImpl();
 		ICommandeDao daocmd = new CommandeDaoImpl();
+		IChaussureDao daochaussure = new ChaussureDaoImpl();
+
 		
-// ----------------- Commande dao TEST --------------------
+		
+		
+		
+		
+		
+// ----------------- Chaussure dao TEST --------------------
+	//Chaussure ch = new Chaussure("Adidas 3 bondes", 90d, 120, "Mehrez fripe", "rose", "Adidas", "Femme", 38);
+		
+//	System.out.println(daochaussure.rechercherParPointure(38));	
+		
 	
 		
-		
-		
-		
-		
-		
-		//List<Commande> cds = daocmd.findByStatut("confirmed");
+// ----------------- Commande dao TEST --------------------
+
+		// List<Commande> cds = daocmd.findByStatut("confirmed");
 //		
 //		SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd");
 //		
@@ -47,7 +58,7 @@ public class TestDao {
 //		}
 //		
 //		
-		
+
 		// System.out.println(dao.findById(2));
 //--------------------- pull dao test --------------------------
 //		List<Pull> allPull = dao.findAll();
