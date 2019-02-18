@@ -21,6 +21,7 @@ import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
 import com.magasin.entities.Frigo;
 import com.magasin.entities.Fruit;
+import com.magasin.entities.LigneCommande;
 import com.magasin.entities.Pull;
 import com.magasin.entities.Tv;
 
@@ -37,6 +38,24 @@ public class TestDao {
 		ITvDao daotv = new TvDaoImpl();
 		
 		
+		//-----------------Commande dao test --------------------------
+		
+//		Commande cmd = new Commande(new Date(), "en cours");
+//		LigneCommande ln = new LigneCommande(daofruit.findById(1), cmd, 5);		
+//		LigneCommande ln2 = new LigneCommande(daofruit.findById(2), cmd, 3);		
+//		cmd.getLignesCommande().add(ln);
+//		cmd.getLignesCommande().add(ln2);
+//		daocmd.create(cmd);
+//	
+//	
+		
+		daocmd.findAll().forEach(e->{
+			System.out.println(e.getLignesCommande());
+		});
+		
+		
+		
+		
 // ----------------TV dao TEST --------------------------
 //		Tv tv = new Tv("TVoNE", 850d, 300, "Samsung", 4, 30);
 //		Tv tv1 = new Tv("TVtWO", 1050d, 150, "Sony", 5, 40);
@@ -51,11 +70,11 @@ public class TestDao {
 //		}
 //		
 //		System.out.println("resolution tv 40 :"+ daotv.rechercherParResolution(40));
-		System.out.println("finding by id 2"+ daotv.findById(2));
-		
-		Tv tv2=daotv.findById(2);
-		System.out.println(daotv.delete(tv2));
-		System.out.println(daotv.delete(tv2));
+//		System.out.println("finding by id 2"+ daotv.findById(2));
+//		
+//		Tv tv2=daotv.findById(2);
+//		System.out.println(daotv.delete(tv2));
+//		System.out.println(daotv.delete(tv2));
 		
 // ----------------- Fruit dao TEST --------------------
 

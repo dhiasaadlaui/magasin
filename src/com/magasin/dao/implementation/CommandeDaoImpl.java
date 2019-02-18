@@ -8,10 +8,12 @@ import java.util.List;
 
 import com.magasin.dao.interfaces.*;
 import com.magasin.entities.Commande;
+import com.magasin.entities.LigneCommande;
+import com.mysql.jdbc.Statement;
 
 public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 
-		private LigneCommandeDaoImpl ligneCommandeDao;
+		private LigneCommandeDaoImpl ligneCommandeDao = new LigneCommandeDaoImpl();
 		
 		
 		
@@ -19,7 +21,7 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 			super();
 			ligneCommandeDao = new LigneCommandeDaoImpl();
 		
-		}
+	}
 
 
 	private Commande fetchCommand(ResultSet rs) {
@@ -28,6 +30,9 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 			cmd.setId(rs.getInt("id"));
 			cmd.setDateCmd(rs.getDate("datecmd"));
 			cmd.setStatutCmd(rs.getString("statutcmd"));
+			// Find all the Lignes with this command
+			List<LigneCommande> allLignesCommande = this.ligneCommandeDao.findByCmd(cmd.getId());
+			cmd.setLignesCommande(allLignesCommande);
 			return cmd;
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
@@ -93,10 +98,22 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 		query = "INSERT INTO commande (datecmd, statutcmd) Values (?, ?)";
 		
 		try {
-			psmt = cnx.connect().prepareStatement(query);
+			psmt = cnx.connect().prepareStatement(query, Statement.RETURN_GENERATED_KEYS);
 			psmt.setDate(1,new java.sql.Date(entite.getDateCmd().getTime()));
 			psmt.setString(2, entite.getStatutCmd());
 			rowInserted = psmt.executeUpdate();
+			ResultSet rs = psmt.getGeneratedKeys(); // Get back the key
+			rs.next();
+			entite.setId(rs.getInt(1));
+			
+			// for each ligenCommand in command
+			for(LigneCommande lcd : entite.getLignesCommande()) {
+				lcd.setCommande(entite);
+				// add the ligne to the database
+				this.ligneCommandeDao.create(lcd);
+				
+			}
+		
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -120,6 +137,12 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 			psmt.setString(2, entite.getStatutCmd());
 			psmt.setInt(3, entite.getId());
 			rowEdited = psmt.executeUpdate();
+			
+			// delete all related lignes 
+			for(LigneCommande lcd : entite.getLignesCommande()) {
+				this.ligneCommandeDao.delete(lcd);
+			}
+			
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
