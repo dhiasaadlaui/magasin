@@ -10,16 +10,19 @@ import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.implementation.FrigoDaoImpl;
 import com.magasin.dao.implementation.FruitDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
+import com.magasin.dao.implementation.TvDaoImpl;
 import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;
 import com.magasin.dao.interfaces.IFrigoDao;
 import com.magasin.dao.interfaces.IFruitDao;
 import com.magasin.dao.interfaces.IPullDao;
+import com.magasin.dao.interfaces.ITvDao;
 import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
 import com.magasin.entities.Frigo;
 import com.magasin.entities.Fruit;
 import com.magasin.entities.Pull;
+import com.magasin.entities.Tv;
 
 public class TestDao {
 
@@ -31,6 +34,29 @@ public class TestDao {
 		IChaussureDao daochaussure = new ChaussureDaoImpl();
 		IFrigoDao daofrigo = new FrigoDaoImpl();
 		IFruitDao daofruit = new FruitDaoImpl();
+		ITvDao daotv = new TvDaoImpl();
+		
+		
+// ----------------TV dao TEST --------------------------
+//		Tv tv = new Tv("TVoNE", 850d, 300, "Samsung", 4, 30);
+//		Tv tv1 = new Tv("TVtWO", 1050d, 150, "Sony", 5, 40);
+//		Tv tv2= new Tv("TVThree", 2500d, 100, "LG", 6, 80);
+//		
+//		daotv.create(tv);
+//		daotv.create(tv1);
+//		daotv.create(tv2);
+//	System.out.println("all tvs");	
+//		for (Tv entitie : daotv.findAll()) {
+//			System.out.println(entitie);
+//		}
+//		
+//		System.out.println("resolution tv 40 :"+ daotv.rechercherParResolution(40));
+		System.out.println("finding by id 2"+ daotv.findById(2));
+		
+		Tv tv2=daotv.findById(2);
+		System.out.println(daotv.delete(tv2));
+		System.out.println(daotv.delete(tv2));
+		
 // ----------------- Fruit dao TEST --------------------
 
 //		System.out.println(daofruit.rechercherParSaision("été"));

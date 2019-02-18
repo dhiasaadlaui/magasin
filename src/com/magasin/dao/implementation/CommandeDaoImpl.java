@@ -11,7 +11,18 @@ import com.magasin.entities.Commande;
 
 public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 
-	public Commande fetchCommand(ResultSet rs) {
+		private LigneCommandeDaoImpl ligneCommandeDao;
+		
+		
+		
+	public CommandeDaoImpl() {
+			super();
+			ligneCommandeDao = new LigneCommandeDaoImpl();
+		
+		}
+
+
+	private Commande fetchCommand(ResultSet rs) {
 		try {
 			Commande cmd = new Commande();
 			cmd.setId(rs.getInt("id"));

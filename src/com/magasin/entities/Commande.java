@@ -1,19 +1,46 @@
 package com.magasin.entities;
 
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 
 public class Commande {
 
 	private int id;
 	private Date dateCmd;
 	private String statutCmd ;
+	private List<LigneCommande> lignesCommande = new ArrayList<>() ;
 	
 	
 	
+	
+	public List<LigneCommande> getLignesCommande() {
+		return lignesCommande;
+	}
+
+	public void setLignesCommande(List<LigneCommande> lignesCommande) {
+		this.lignesCommande = lignesCommande;
+	}
+
 	public Commande(Date dateCmd, String statutCmd) {
 		super();
 		this.dateCmd = dateCmd;
 		this.statutCmd = statutCmd;
+	}
+
+	public Commande(Date dateCmd, String statutCmd, List<LigneCommande> lignesCommande) {
+		super();
+		this.dateCmd = dateCmd;
+		this.statutCmd = statutCmd;
+		this.lignesCommande = lignesCommande;
+	}
+
+	public Commande(int id, Date dateCmd, String statutCmd, List<LigneCommande> lignesCommande) {
+		super();
+		this.id = id;
+		this.dateCmd = dateCmd;
+		this.statutCmd = statutCmd;
+		this.lignesCommande = lignesCommande;
 	}
 
 	public Commande(int id, Date dateCmd, String statutCmd) {

@@ -8,6 +8,18 @@ public class LigneCommande {
 	
 	
 	
+	public Commande getCommande() {
+		return commande;
+	}
+	public void setCommande(Commande commande) {
+		this.commande = commande;
+	}
+	public void setArticle(Article article) {
+		this.article = article;
+	}
+	public void setPrixTotalArticle(double prixTotalArticle) {
+		this.prixTotalArticle = prixTotalArticle;
+	}
 	public LigneCommande(Article article,Commande commande, int quantite) {
 		super();
 		this.article = article;
