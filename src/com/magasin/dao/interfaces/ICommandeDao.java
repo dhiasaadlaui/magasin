@@ -4,6 +4,7 @@ import java.util.Date;
 import java.util.List;
 
 import com.magasin.entities.Commande;
+import com.magasin.entities.LigneCommande;
 
 public interface ICommandeDao extends IGenericDao<Commande> {
 	

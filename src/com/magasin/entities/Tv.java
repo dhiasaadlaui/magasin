@@ -37,5 +37,14 @@ public final class Tv extends Electronique {
 		this.resolution = resolution;
 	}
 
+
+	@Override
+	public String toString() {
+		return "Tv [resolution=" + resolution + ", ratingConsommation=" + ratingConsommation + ", id=" + id
+				+ ", libelle=" + libelle + ", prixUnitaire=" + prixUnitaire + ", quantite=" + quantite
+				+ ", fournisseur=" + fournisseur + "]";
+	}
+
+	
 	
 }
