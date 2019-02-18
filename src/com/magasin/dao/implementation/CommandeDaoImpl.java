@@ -13,13 +13,13 @@ import com.mysql.jdbc.Statement;
 
 public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 
-		private LigneCommandeDaoImpl ligneCommandeDao = new LigneCommandeDaoImpl();
+		private LigneCommandeDaoUtil ligneCommandeDao = new LigneCommandeDaoUtil();
 		
 		
 		
 	public CommandeDaoImpl() {
 			super();
-			ligneCommandeDao = new LigneCommandeDaoImpl();
+			ligneCommandeDao = new LigneCommandeDaoUtil();
 		
 	}
 

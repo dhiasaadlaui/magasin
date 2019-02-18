@@ -20,7 +20,7 @@ import com.magasin.entities.LigneCommande;
 import com.magasin.entities.Pull;
 import com.magasin.entities.Tv;
 
- class LigneCommandeDaoImpl extends GenericDaoImpl {
+ class LigneCommandeDaoUtil extends GenericDaoImpl {
 
 	private Article convertArt(ResultSet rs, String typeArticle) {
 		Article art = null;
