@@ -43,7 +43,7 @@ import com.magasin.entities.Tv;
 						rs.getInt("frigo.ratingConsommation"), rs.getInt("frigo.capacite"));
 
 			} else if (typeArticle.equals("fruit")) {
-				art = new Fruit(rs.getInt("fruit.id"), rs.getString("fruit.libelle"), rs.getDouble("fruit.prixunitaire"), rs.getInt("fruit.quantite"), rs.getString("fruit.fourniseur"),
+				art = new Fruit(rs.getInt("fruit.id"), rs.getString("fruit.libelle"), rs.getDouble("fruit.prixunitaire"), rs.getInt("fruit.quantite"), rs.getString("fruit.fournisseur"),
 						rs.getString("fruit.saison"));
 
 			} else if (typeArticle.equals("laitier")) {
