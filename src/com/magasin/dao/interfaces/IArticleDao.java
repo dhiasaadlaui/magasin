@@ -7,10 +7,10 @@ import com.sun.org.apache.xml.internal.resolver.helpers.PublicId;
 
 public interface IArticleDao  {
 
-public List<Article> findAll();
-public List<Article> findByLibelle();
+List<Article> findAll();
 int create (Article entite);
 int edit (Article entite);
-int delete(Article entite); 
+int delete(Article entite);
+List<Article> findByLibelle(String libelle); 
 	
 }
