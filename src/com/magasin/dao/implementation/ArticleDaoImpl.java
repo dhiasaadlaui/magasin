@@ -44,7 +44,7 @@ public class ArticleDaoImpl extends GenericDaoImpl implements IArticleDao {
 		allArticles.addAll(frigoDao.findAll());
 		allArticles.addAll(chaussureDao.findAll());
 		allArticles.addAll(fruitDao.findAll());
-		//allArticles.addAll(laitierDao.findAll());
+		allArticles.addAll(laitierDao.findAll());
 		allArticles.addAll(pullDao.findAll());
 		allArticles.addAll(tvDao.findAll());
 
