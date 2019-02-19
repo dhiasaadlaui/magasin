@@ -5,18 +5,21 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
+import com.magasin.dao.implementation.ArticleDaoImpl;
 import com.magasin.dao.implementation.ChaussureDaoImpl;
 import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.implementation.FrigoDaoImpl;
 import com.magasin.dao.implementation.FruitDaoImpl;
 import com.magasin.dao.implementation.PullDaoImpl;
 import com.magasin.dao.implementation.TvDaoImpl;
+import com.magasin.dao.interfaces.IArticleDao;
 import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;
 import com.magasin.dao.interfaces.IFrigoDao;
 import com.magasin.dao.interfaces.IFruitDao;
 import com.magasin.dao.interfaces.IPullDao;
 import com.magasin.dao.interfaces.ITvDao;
+import com.magasin.entities.Article;
 import com.magasin.entities.Chaussure;
 import com.magasin.entities.Commande;
 import com.magasin.entities.Frigo;
@@ -36,6 +39,13 @@ public class TestDao {
 		IFrigoDao daofrigo = new FrigoDaoImpl();
 		IFruitDao daofruit = new FruitDaoImpl();
 		ITvDao daotv = new TvDaoImpl();
+		IArticleDao daoarticle= new ArticleDaoImpl();
+		
+		//---------- Article dao test --------
+		
+		for(Article art : daoarticle.findAll() ) {
+			System.out.println(art);
+		}
 		
 		
 		//-----------------Commande dao test --------------------------
@@ -49,11 +59,11 @@ public class TestDao {
 //	
 //	
 		
-		daocmd.findAll().forEach(e->{
-			System.out.println(e.getLignesCommande());
-		});
-		
-		
+//		daocmd.findAll().forEach(e->{
+//			System.out.println(e.getLignesCommande());
+//		});
+//		
+//		
 		
 		
 // ----------------TV dao TEST --------------------------

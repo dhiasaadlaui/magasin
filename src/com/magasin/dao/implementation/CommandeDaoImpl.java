@@ -138,9 +138,8 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 			psmt.setInt(3, entite.getId());
 			rowEdited = psmt.executeUpdate();
 			
-			// delete all related lignes 
 			for(LigneCommande lcd : entite.getLignesCommande()) {
-				this.ligneCommandeDao.delete(lcd);
+				this.ligneCommandeDao.edit(lcd);
 			}
 			
 		} catch (SQLException e) {
@@ -158,6 +157,11 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 		try {
 			psmt = cnx.connect().prepareStatement(query);
 			rowDeleted = psmt.executeUpdate();
+			
+			// delete all related lignes 
+			for(LigneCommande lcd : entite.getLignesCommande()) {
+				this.ligneCommandeDao.edit(lcd);
+			}
 		} catch (SQLException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
