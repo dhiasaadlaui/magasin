@@ -4,7 +4,7 @@ import com.magasin.entities.Commande;
 
 public class AddCommandeGUI {
 
-	public AddCommandeGUI(Commande commande) {
+	public AddCommandeGUI() {
 		// TODO Auto-generated constructor stub
 	}
 
