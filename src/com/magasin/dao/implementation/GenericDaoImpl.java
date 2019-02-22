@@ -5,8 +5,6 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.Statement;
 
-import com.magasin.dao.Connexion;
-
 public class GenericDaoImpl {
 
 	
