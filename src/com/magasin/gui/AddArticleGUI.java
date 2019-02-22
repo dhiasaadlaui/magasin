@@ -4,7 +4,7 @@ import com.magasin.entities.Article;
 
 public class AddArticleGUI {
 
-	public AddArticleGUI(Article article) {
+	public AddArticleGUI() {
 		// TODO Auto-generated constructor stub
 	}
 
