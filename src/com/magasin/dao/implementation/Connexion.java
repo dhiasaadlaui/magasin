@@ -1,4 +1,4 @@
-package com.magasin.dao;
+package com.magasin.dao.implementation;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

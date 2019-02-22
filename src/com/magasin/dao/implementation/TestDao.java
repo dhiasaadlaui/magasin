@@ -1,17 +1,10 @@
-package com.magasin.dao;
+package com.magasin.dao.implementation;
 
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.List;
 
-import com.magasin.dao.implementation.ArticleDaoImpl;
-import com.magasin.dao.implementation.ChaussureDaoImpl;
-import com.magasin.dao.implementation.CommandeDaoImpl;
-import com.magasin.dao.implementation.FrigoDaoImpl;
-import com.magasin.dao.implementation.FruitDaoImpl;
-import com.magasin.dao.implementation.PullDaoImpl;
-import com.magasin.dao.implementation.TvDaoImpl;
 import com.magasin.dao.interfaces.IArticleDao;
 import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.dao.interfaces.ICommandeDao;

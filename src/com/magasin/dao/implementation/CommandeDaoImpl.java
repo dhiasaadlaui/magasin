@@ -138,6 +138,15 @@ public class CommandeDaoImpl extends GenericDaoImpl implements ICommandeDao{
 			psmt.setInt(3, entite.getId());
 			rowEdited = psmt.executeUpdate();
 			
+			// Return the lignes of the comma nd stored in the database
+			ArrayList<LigneCommande> currLignes = (ArrayList<LigneCommande>) this.ligneCommandeDao.findByCmd(entite.getId());
+			
+			// delete all the old lignes
+			for(LigneCommande lc : currLignes) {
+				this.ligneCommandeDao.delete(lc);
+			}
+			
+			// Add the new Command Lignes
 			for(LigneCommande lcd : entite.getLignesCommande()) {
 				this.ligneCommandeDao.edit(lcd);
 			}
