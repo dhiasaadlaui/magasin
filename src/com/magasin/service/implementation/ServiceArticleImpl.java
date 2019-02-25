@@ -11,11 +11,7 @@ public class ServiceArticleImpl implements IServiceArticle {
 		// TODO Auto-generated constructor stub
 	}
 
-	@Override
-	public Article findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
-	}
+
 
 	@Override
 	public List<Article> findAll() {
@@ -41,10 +37,14 @@ public class ServiceArticleImpl implements IServiceArticle {
 		return 0;
 	}
 
+
+
 	@Override
-	public List<Article> search(Object field, Object value) {
+	public Article findById(ArticleTypes type, int id) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

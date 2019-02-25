@@ -7,6 +7,8 @@ import com.magasin.service.interfaces.IServiceChaussure;
 
 public class ServiceChaussureImpl implements IServiceChaussure {
 
+	
+	
 	public ServiceChaussureImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,9 +44,11 @@ public class ServiceChaussureImpl implements IServiceChaussure {
 	}
 
 	@Override
-	public List<Chaussure> search(Object field, Object value) {
+	public List<Chaussure> search(ChaussureSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

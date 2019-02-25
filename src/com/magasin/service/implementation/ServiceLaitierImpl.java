@@ -7,6 +7,9 @@ import com.magasin.service.interfaces.IServiceLaitier;
 
 public class ServiceLaitierImpl implements IServiceLaitier {
 
+	
+	
+	
 	public ServiceLaitierImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,9 +45,11 @@ public class ServiceLaitierImpl implements IServiceLaitier {
 	}
 
 	@Override
-	public List<Laitier> search(Object field, Object value) {
+	public List<Laitier> search(LaitierSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }

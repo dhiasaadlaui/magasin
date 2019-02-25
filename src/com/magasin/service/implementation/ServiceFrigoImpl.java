@@ -7,6 +7,8 @@ import com.magasin.service.interfaces.IServiceFrigo;
 
 public class ServiceFrigoImpl implements IServiceFrigo {
 
+
+	
 	public ServiceFrigoImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -41,8 +43,10 @@ public class ServiceFrigoImpl implements IServiceFrigo {
 		return 0;
 	}
 
+
+
 	@Override
-	public List<Frigo> search(Object field, Object value) {
+	public List<Frigo> search(FrigoSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}

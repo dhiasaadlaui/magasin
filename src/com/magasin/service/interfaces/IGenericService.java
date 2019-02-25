@@ -11,7 +11,7 @@ public interface IGenericService<T> {
 	int create (T entite);
 	int edit (T entite);
 	int delete(T entite);
-	List<T> search ( Object  field,Object value  );
+	
 	
 	
 }
