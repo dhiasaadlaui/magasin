@@ -9,6 +9,10 @@ import com.magasin.service.interfaces.IServicePull;
 
 public class ServicePullImpl implements IServicePull {
 
+	public enum PullSearchFields{
+		TAILLE;
+	}
+	
 	private IPullDao pulldo;
 	public ServicePullImpl() {
 		// TODO Auto-generated constructor stub
@@ -47,11 +51,10 @@ public class ServicePullImpl implements IServicePull {
 	}
 
 	@Override
-	public List<Pull> search(Object field, Object value) {
-		// TODO Auto-generated method stub
-		if(field.equals("taille"))
-			return pulldo.rechercherParTaille((String)value);
-		return null;
+	public List<Pull> search(com.magasin.service.interfaces.IServicePull.PullSearchFields field, Object value) {
+		return pulldo.rechercherParTaille((String)value);
 	}
+
+
 
 }

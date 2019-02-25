@@ -6,7 +6,9 @@ import com.magasin.entities.Fruit;
 import com.magasin.service.interfaces.IServiceFruit;
 
 public class ServiceFruitImpl implements IServiceFruit {
+	
 
+	
 	public ServiceFruitImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,9 +44,10 @@ public class ServiceFruitImpl implements IServiceFruit {
 	}
 
 	@Override
-	public List<Fruit> search(Object field, Object value) {
+	public List<Fruit> search(FruitSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
 
 }

@@ -7,6 +7,8 @@ import com.magasin.service.interfaces.IServiceCommande;
 
 public class ServiceCommandeImpl implements IServiceCommande {
 
+	
+	
 	public ServiceCommandeImpl() {
 		// TODO Auto-generated constructor stub
 	}
@@ -42,9 +44,11 @@ public class ServiceCommandeImpl implements IServiceCommande {
 	}
 
 	@Override
-	public List<Commande> search(Object field, Object value) {
+	public List<Commande> search(CommandeSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }
