@@ -15,10 +15,9 @@ public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
 	public Pull findById(int id) {
 		
 		Pull pull=null;
-		query="SELECT * FROM pull where id="+id;
-	try {
-		smt = cnx.connect().createStatement();
-		rs = smt.executeQuery(query);
+	
+	try {	
+		rs =cnx.getResult("SELECT * FROM pull where id="+id);
 		while(rs.next()) {
 			pull = new Pull();
 			pull.setId(rs.getInt("id"));
@@ -47,10 +46,9 @@ public class PullDaoImpl extends GenericDaoImpl implements IPullDao {
 	public List<Pull> findAll() {
 		List<Pull> allPull = new ArrayList<>();
 		Pull pull;
-		query="SELECT * FROM pull";
+
 	try {
-		smt = cnx.connect().createStatement();
-		rs = smt.executeQuery(query);
+		rs=cnx.getResult("SELECT * FROM pull");
 		while(rs.next()) {
 			pull = new Pull();
 			pull.setId(rs.getInt("id"));
