@@ -1,53 +1,54 @@
 package com.magasin.service.implementation;
 
+import java.util.Date;
 import java.util.List;
 
+import com.magasin.dao.implementation.FruitDaoImpl;
+import com.magasin.dao.interfaces.IFruitDao;
 import com.magasin.entities.Fruit;
 import com.magasin.service.interfaces.IServiceFruit;
 
 public class ServiceFruitImpl implements IServiceFruit {
-	
 
-	
+	private IFruitDao fruitDao;
+
 	public ServiceFruitImpl() {
-		// TODO Auto-generated constructor stub
+		this.fruitDao = new FruitDaoImpl();
 	}
 
 	@Override
 	public Fruit findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.fruitDao.findById(id);
 	}
 
 	@Override
 	public List<Fruit> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.fruitDao.findAll();
 	}
 
 	@Override
 	public int create(Fruit entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.fruitDao.create(entite);
 	}
 
 	@Override
 	public int edit(Fruit entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.fruitDao.edit(entite);
 	}
 
 	@Override
 	public int delete(Fruit entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.fruitDao.delete(entite);
 	}
 
 	@Override
 	public List<Fruit> search(FruitSearchFields field, Object value) {
-		// TODO Auto-generated method stub
-		return null;
+		switch (field) {
+		case SAISON:
+			return this.fruitDao.rechercherParSaision((String) value);
+		default:
+			return null;
+		}
 	}
-
 
 }

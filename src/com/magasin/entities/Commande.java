@@ -51,6 +51,8 @@ public class Commande {
 	
 	public Commande() {
 		// TODO Auto-generated constructor stub
+		this.dateCmd = new Date();
+		statutCmd = "PENDING";
 	}
 
 	public int getId() {
