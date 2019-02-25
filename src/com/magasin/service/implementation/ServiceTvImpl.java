@@ -42,9 +42,11 @@ public class ServiceTvImpl implements IServiceTv {
 	}
 
 	@Override
-	public List<Tv> search(Object field, Object value) {
+	public List<Tv> search(TvSearchFields field, Object value) {
 		// TODO Auto-generated method stub
 		return null;
 	}
+
+
 
 }
