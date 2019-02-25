@@ -74,6 +74,14 @@ public class Commande {
 	public String getStatutCmd() {
 		return statutCmd;
 	}
+	private double getPrixTotal() {
+		// TODO Auto-generated method stub
+double d=0;
+for (LigneCommande ligneCommande : lignesCommande) {
+	d+=ligneCommande.getPrixTotalArticle();
+}
+return d;
+	}
 
 	public void setStatutCmd(String statutCmd) {
 		this.statutCmd = statutCmd;
@@ -82,6 +90,23 @@ public class Commande {
 	@Override
 	public String toString() {
 		return "Commande [id=" + id + ", dateCmd=" + dateCmd + ", statutCmd=" + statutCmd + "]";
+	}
+
+	public void affiche() {
+		// TODO Auto-generated method stub
+		System.out.println("ID : "+id);
+		System.out.println("Date : "+dateCmd);
+		System.out.println("Status : "+statutCmd);
+		System.out.println("Prix Total : "+getPrixTotal());
+
+		System.out.println("Lignes :");
+		
+		for (LigneCommande ligneCommande : lignesCommande) {
+			
+			System.out.println(""+ligneCommande);
+		}
+		
+		
 	}
 	
 	

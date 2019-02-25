@@ -32,7 +32,7 @@ import com.magasin.entities.Tv;
 
 			} else if (typeArticle.equals("tv")) {
 				art = new Tv(rs.getInt("tv.id"), rs.getString("tv.libelle"), rs.getDouble("tv.prixunitaire"), rs.getInt("tv.quantite"), rs.getString("tv.fournisseur"),
-						rs.getInt("tv.ratingconsomation"), rs.getInt("tv.resolution"));
+						rs.getInt("tv.ratingconsommation"), rs.getInt("tv.resolution"));
 
 			} else if (typeArticle.equals("chaussure")) {
 				art = new Chaussure(rs.getInt("chaussure.id"), rs.getString("chaussure.libelle"), rs.getDouble("chaussure.prixunitaire"), rs.getInt("chaussure.quantite"), rs.getString("chaussure.fournisseur"),
