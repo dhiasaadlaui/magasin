@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.magasin.entities.Pull;
 import com.magasin.entities.Tv;
-import com.magasin.service.implementation.ServicePullImpl.PullSearchFields;
 
 public interface IServicePull extends IGenericService<Pull> {
 	

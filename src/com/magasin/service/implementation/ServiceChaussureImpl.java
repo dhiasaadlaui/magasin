@@ -2,53 +2,59 @@ package com.magasin.service.implementation;
 
 import java.util.List;
 
+import com.magasin.dao.implementation.ChaussureDaoImpl;
+import com.magasin.dao.interfaces.IChaussureDao;
 import com.magasin.entities.Chaussure;
 import com.magasin.service.interfaces.IServiceChaussure;
 
 public class ServiceChaussureImpl implements IServiceChaussure {
 
-	
-	
+	private IChaussureDao chaussureDao;
+
 	public ServiceChaussureImpl() {
-		// TODO Auto-generated constructor stub
+		this.chaussureDao = new ChaussureDaoImpl();
 	}
 
 	@Override
 	public Chaussure findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return chaussureDao.findById(id);
 	}
 
 	@Override
 	public List<Chaussure> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return chaussureDao.findAll();
 	}
 
 	@Override
 	public int create(Chaussure entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return chaussureDao.create(entite);
 	}
 
 	@Override
 	public int edit(Chaussure entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return chaussureDao.edit(entite);
 	}
 
 	@Override
 	public int delete(Chaussure entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return chaussureDao.delete(entite);
 	}
 
 	@Override
 	public List<Chaussure> search(ChaussureSearchFields field, Object value) {
-		// TODO Auto-generated method stub
-		return null;
+		switch (field) {
+		case COULEUR:
+			return chaussureDao.rechercherParCouleur((String) value);
+		case MARQUE:
+			return chaussureDao.rechercherParMarque((String) value);
+		case GENRE:
+			return chaussureDao.rechercherParGenre((String) value);
+		case POINTURE:
+			return chaussureDao.rechercherParPointure((int) value);
+		default:
+			return null;
+		}
+
 	}
-
-
 
 }

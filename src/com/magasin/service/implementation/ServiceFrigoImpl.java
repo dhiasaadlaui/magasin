@@ -1,54 +1,56 @@
 package com.magasin.service.implementation;
 
+import java.util.Date;
 import java.util.List;
 
+import com.magasin.dao.implementation.FrigoDaoImpl;
+import com.magasin.dao.interfaces.IFrigoDao;
 import com.magasin.entities.Frigo;
 import com.magasin.service.interfaces.IServiceFrigo;
 
 public class ServiceFrigoImpl implements IServiceFrigo {
 
+	private IFrigoDao frigoDao;
 
-	
 	public ServiceFrigoImpl() {
-		// TODO Auto-generated constructor stub
+		this.frigoDao = new FrigoDaoImpl();
 	}
 
 	@Override
 	public Frigo findById(int id) {
-		// TODO Auto-generated method stub
-		return null;
+		return this.frigoDao.findById(id);
 	}
 
 	@Override
 	public List<Frigo> findAll() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.frigoDao.findAll();
 	}
 
 	@Override
 	public int create(Frigo entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.frigoDao.create(entite);
 	}
 
 	@Override
 	public int edit(Frigo entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.frigoDao.edit(entite);
 	}
 
 	@Override
 	public int delete(Frigo entite) {
-		// TODO Auto-generated method stub
-		return 0;
+		return this.frigoDao.delete(entite);
 	}
-
-
 
 	@Override
 	public List<Frigo> search(FrigoSearchFields field, Object value) {
-		// TODO Auto-generated method stub
-		return null;
+		switch (field) {
+		case CAPACITE:
+			return frigoDao.rechercherParCapacite((int) value);
+		case CONSOMMATION:
+			return frigoDao.rechercherParRationCons((int) value);
+		default:
+			return null;
+		}
 	}
 
 }
