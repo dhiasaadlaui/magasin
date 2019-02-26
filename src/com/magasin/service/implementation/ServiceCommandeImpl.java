@@ -2,6 +2,7 @@ package com.magasin.service.implementation;
 
 import java.util.Date;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import com.magasin.dao.implementation.CommandeDaoImpl;
 import com.magasin.dao.interfaces.ICommandeDao;
@@ -15,7 +16,23 @@ public class ServiceCommandeImpl implements IServiceCommande {
 	public ServiceCommandeImpl() {
 		this.commandeDao = new CommandeDaoImpl();
 	}
-
+	@Override
+	public List<Commande> getDoneCommandes(){
+		
+		return commandeDao.findAll().stream()
+				.filter(e-> e.getStatutCmd().equalsIgnoreCase("done"))
+				.collect(Collectors.toList());
+		
+	}
+	@Override
+	public List<Commande> getPendingCommandes(){
+		
+		return commandeDao.findAll().stream()
+				.filter(e-> e.getStatutCmd().equalsIgnoreCase("pending"))
+				.collect(Collectors.toList());
+		
+	}
+	
 	@Override
 	public Commande findById(int id) {
 		return this.commandeDao.findById(id);

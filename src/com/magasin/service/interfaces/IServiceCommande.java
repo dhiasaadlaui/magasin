@@ -13,6 +13,7 @@ public interface IServiceCommande extends IGenericService<Commande> {
 	List<Commande> search ( CommandeSearchFields  field,Object value  );
 	
 	void validateCommande(Commande commande);
-	
+	List<Commande> getDoneCommandes();
+	List<Commande> getPendingCommandes();
 
 }
