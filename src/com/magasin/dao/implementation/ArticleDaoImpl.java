@@ -54,62 +54,64 @@ public class ArticleDaoImpl extends GenericDaoImpl implements IArticleDao {
 
 	@Override
 	public List<Article> findByLibelle(String libelle) {
-		return findAll().stream()
-				.filter(a -> a.getLibelle().equals(libelle))
-				.collect(Collectors.toList());
+		return findAll().stream().filter(a -> a.getLibelle().equals(libelle)).collect(Collectors.toList());
 	}
 
 	// the methode return -1 if the article wasn't added
 	@Override
 	public int create(Article entite) {
-
-		if (entite instanceof Frigo)
+		switch (entite.getClass().getSimpleName()) {
+		case "Frigo":
 			return frigoDao.create((Frigo) entite);
-		if (entite instanceof Fruit)
+		case "Fruit":
 			return fruitDao.create((Fruit) entite);
-		if (entite instanceof Laitier)
+		case "Laitier":
 			return laitierDao.create((Laitier) entite);
-		if (entite instanceof Pull)
+		case "Pull":
 			return pullDao.create((Pull) entite);
-		if (entite instanceof Tv)
+		case "Tv":
 			return tvDao.create((Tv) entite);
-
-		return -1;
+		default:
+			return -1;
+		}
 	}
 
 	// the methode return -1 if the article wasn't modified
 	@Override
 	public int edit(Article entite) {
-		if (entite instanceof Frigo)
+		switch (entite.getClass().getSimpleName()) {
+		case "Frigo":
 			return frigoDao.edit((Frigo) entite);
-		if (entite instanceof Fruit)
+		case "Fruit":
 			return fruitDao.edit((Fruit) entite);
-		if (entite instanceof Laitier)
+		case "Laitier":
 			return laitierDao.edit((Laitier) entite);
-		if (entite instanceof Pull)
+		case "Pull":
 			return pullDao.edit((Pull) entite);
-		if (entite instanceof Tv)
+		case "Tv":
 			return tvDao.edit((Tv) entite);
-
-		return -1;
+		default:
+			return -1;
+		}
 
 	}
 
 	@Override
 	public int delete(Article entite) {
-		if (entite instanceof Frigo)
+		switch (entite.getClass().getSimpleName()) {
+		case "Frigo":
 			return frigoDao.delete((Frigo) entite);
-		if (entite instanceof Fruit)
+		case "Fruit":
 			return fruitDao.delete((Fruit) entite);
-		if (entite instanceof Laitier)
+		case "Laitier":
 			return laitierDao.delete((Laitier) entite);
-		if (entite instanceof Pull)
+		case "Pull":
 			return pullDao.delete((Pull) entite);
-		if (entite instanceof Tv)
+		case "Tv":
 			return tvDao.delete((Tv) entite);
-
-		return -1;
+		default:
+			return -1;
+		}
 	}
-
 
 }
